@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --white: #fff;
+    --black: #1c2b2d;
+    --blue: #31326f;
+    --color-primary: #9d0191;
+   --color-sec: #db6400;
+   --color-grey: #eee;
+   --color-dark-grey: #222831;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    /* padding-top: 5rem; */
+}
+
+.instructions {
+    font-size: 1.6rem;
+    width: 30%;
+    height: 100vh;
+    padding-bottom: 5px;
+    border-right: 2px solid #eee;
+    background-color: var(--black);
+    padding-top: 5rem;
+    color: #eee;
+}
+
+.instructions h2 {
+    font-size: 3.5rem;
+    color: var(--color-sec);
+    margin-bottom: 1rem;
+}
+
+.instructions ol {
+    padding-left: 15px;
+    padding-top: 10px;
+    color: #eee;
+}
+
+.instructions ol a {
+    color: var(--color-sec);
+    text-decoration: none;
+}
+
+.line {
+    position: relative;
+    margin: 5px 0;
+}
+
+.line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 25%;
+    height: 2px;
+    background-color: #eee;
+}
+
+
+
+.download-link {
+    width: 70%;
+    border-right: 5px;
+    padding-top: 5rem;
+}
+
+.download-link section {
+    border: 2px solid var(--color-primary);
+    border-radius: 0 0 5px 5px;
+}
+
+
+/* form section */
+main h1 {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 5rem;
+    color: var(--color-primary);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+main input[type=radio] {
+    display: none;
+}
+
+main nav {
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #eee;
+    padding: 5px;
+    position: relative;
+    background-color: var(--color-grey);
+    z-index: 1;
+}
+
+main nav label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 1rem;
+    position: relative;
+    color: var(--color-dark-grey);
+    cursor: pointer;
+}
+
+main nav label i {
+    padding-right: .5rem;
+    color: var(--color-sec);
+}
+
+nav .slide {
+    position: absolute;
+    top: 0;
+    left: 3%;
+    width: 26%;
+    padding: 0 1rem;
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 3px;
+    z-index: -1;
+    transition: all .3s;
+}
+
+#register:checked ~ nav .slide {
+    left: 31%;
+}
+
+#reset:checked ~ nav .slide {
+    left: 66%;
+}
+
+#login:checked ~ nav label.login, 
+#register:checked ~ nav label.register, 
+#reset:checked ~ nav label.reset 
+{
+    color: white;
+}
+
+.content {
+    display: none;
+}
+
+#login:checked ~ section .content-link {
+    display: block;
+}
+
+#register:checked ~ section .content-audio {
+    display: block;
+}
+
+#reset:checked ~ section .content-video {
+    display: block;
+    transform: translateX(0);
+}
+
+/* FORM STYLES */
+section .content {
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.content > i {
+    font-size: 3rem;
+    color: var(--color-sec);
+    border: 2px solid;
+    padding: .8rem;
+    border-radius: 5rem;
+}
+
+.content h2 {
+    font-size: 2rem;
+    line-height: 2;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.content h2:before {
+    content: "";
+    position: absolute;
+    left: 28%;
+    top: 50%;
+    width: 2%;
+    height: 1px;
+    background-color: var(--color-dark-grey);
+    transform: translateY(-50%);
+}
+
+.content h2:after {
+    content: "";
+    position: absolute;
+    right: 28%;
+    top: 50%;
+    width: 2%;
+    height: 1px;
+    background-color: var(--color-dark-grey);
+    transform: translateY(-50%);
+}
+
+.content p {
+    padding-bottom: 1rem;
+}
+
+.content form {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.content form label {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.content form label input {
+    display: block;
+    width: 100%;
+    padding: 1.3rem 3rem;
+    border: 1px solid transparent;
+    border-radius: 10px 0 10px 0;
+    border-bottom: 2px solid rgba(0,0,0,.4);
+    margin-bottom: 2rem;
+    background-color: rgba(0,0,0,.1);
+    outline: none;
+    color: var(--color-dark-grey);
+    transition: all .3s;
+}
+
+.content form label input:focus:invalid {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--color-sec);
+}
+
+.content form label input:valid {
+    font-size: 1.6rem;
+    border-bottom: 2px solid green;
+    background-color: #E8F0FE;
+}
+.content form i {
+    position: absolute;
+    left: 1rem;
+    top: 1.5rem;
+    font-size: 1.3rem;
+    color: var(--color-sec);   
+}
+
+::placeholder {
+    color: var(--color-dark-grey);
+    font-size: 1.5rem;
+}
+
+.embed-code {
+    font-size: 1.6rem;
+    position: relative;
+}
+.content form textarea {
+    width: 100%;
+    height: 10rem;
+    outline: none;
+    font-size: 1.6rem;
+    font-family: inherit;
+}
+
+.embed-code span {
+    position: absolute;
+    right: 1px;
+    bottom: 5px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--color-primary);
+    padding: 5px 8px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.embed-code span:hover {
+    font-size: 1.8rem;
+}
+
+.content .btn {
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background-color: var(--color-sec);
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    /* box-shadow: 0 1rem 2rem rgba(0,0,0,.3); */
+    transition: all .3s;
+}
+
+.content .btn:hover {
+    transform: translateY(-3px);
+    background-color: var(--color-primary);
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 750px) {
+    .main-container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .instructions {
+        width: 100%;
+    }
+
+    .download-link {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .download-link h1 {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
