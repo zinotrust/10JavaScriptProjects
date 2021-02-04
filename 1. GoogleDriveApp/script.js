@@ -1,6 +1,10 @@
 const gLink= document.getElementById("glink");
 const btn = document.getElementById("btn");
 const downloadLink = document.getElementById("download-link");
+const embedAudio = document.getElementById("embed-audio");
+const embedVideo = document.getElementById("embed-video");
+const clear = document.querySelector(".clear");
+
 
 
 btn.addEventListener("click", generateLink);
@@ -35,7 +39,7 @@ function generateLink(e) {
         // EMBED AUDIO
         const audio1 = '<audio width="300" height="32" controls="controls" src="';
         const audio2 = '" type="audio/mp3"></audio>';
-        const embedAudio = document.getElementById("embed-audio");
+        
         console.log(downloadLink.value);
         embedAudio.value = `${audio1}${downloadLink.value}${audio2}`;
         // COPY AUDIO EMBED CODE
@@ -51,7 +55,7 @@ function generateLink(e) {
 
         const video1 = '<iframe src="';
         const video2 = '/preview" width="560" height="315"></iframe>';
-        const embedVideo = document.getElementById("embed-video");
+        
         embedVideo.value = `${video1}${getVideoLink}${video2}`;
 
         const copyVideo = document.querySelector(".copy-video");
@@ -64,13 +68,15 @@ function generateLink(e) {
     }
 }
 
-const x = 2;
-const y = 2;
+clear.addEventListener("click", clearForm);
 
-function add(a, b) {
-    return a + b;
+function clearForm(e) {
+    e.preventDefault();
+    gLink.value = "";
+    downloadLink.value = "";
+    embedAudio.value = "";
+    embedVideo.value = "";
 }
-console.log(add(x, y));
 
 
 

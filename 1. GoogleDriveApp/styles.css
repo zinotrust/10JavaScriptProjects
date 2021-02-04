@@ -334,6 +334,24 @@ section .content {
     background-color: var(--color-primary);
 }
 
+button.clear {
+    font-size: 1.6rem;
+    color: #fff;
+    background-color: red;
+    padding: .8rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+button.clear:hover {
+    background-color: orangered;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 750px) {
     .main-container {
