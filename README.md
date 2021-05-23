@@ -1,6 +1,10 @@
 # 10JavaScriptProjects
 
-## YouTube Video Link: https://www.youtube.com/watch?v=acr5j6O61K0
+**Check out our 100 Days of JavaScript course aimed at helping beginners/intermediate level JavaScript developers sharpen their JavaScript skills**
+
+[100Days of JavaScript Course Link](https://www.udemy.com/course/100-days-of-javascript/?referralCode=9FB1A91BA3B143B2A261)
+
+## YouTube Video Link for 10JavaScript Projects: https://www.youtube.com/watch?v=w0tEXBeQ2jQ&list=PLQfqQHJBFM1_aAfX64bIShV8k7QCqmHE5
 
 ## Master JavaScript By Building 10 Projects
 ## 1. Google Direct Download Link Generator ----------- Done
